@@ -52,6 +52,7 @@ alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </d
 # Git
 alias gcb="git co -b"
 alias gz="g cz"
+alias gci="g ci -m"
 # Inshallah
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
@@ -63,15 +64,28 @@ alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
 ##### FUNCTIONS ######
 #######################################################
 
-# Docker
+### Docker ###
+# Sh on a container
 dsh() {
   docker ps | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} docker exec -it {} sh
 }
+# Remove container
 drmc() {
   docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker rm
 }
+# Restart container
 drsc() { 
   docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker restart
+}
+
+### Kubernetes ###
+# Sh on a kubernetes container
+ksh() {
+  kgpo | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl exec -it {} sh
+}
+# Delete a pod
+kdel() {
+  kgpo | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
 }
 
 gpr() {
