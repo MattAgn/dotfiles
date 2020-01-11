@@ -70,7 +70,7 @@ dsh() {
 drmc() {
   docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker rm
 }
-drtc() { 
+drsc() { 
   docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker restart
 }
 
