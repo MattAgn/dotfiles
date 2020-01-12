@@ -64,7 +64,6 @@ alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
 alias gcb="git co -b"
 alias gz="g cz"
 alias gci="g ci -m"
-alias gia="g ia"
 alias gap="g add -p"
 alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
 _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
@@ -93,21 +92,6 @@ gcoci() {
     fzf --no-sort --reverse --tiebreak=index --no-multi \
         --ansi --preview="$_viewGitLogLine" ) &&
   git checkout $(echo "$commit" | sed "s/ .*//")
-}
-
-# glogp - git commit browser with previews
-glogp() {
-    glNoGraph |
-        fzf --no-sort --reverse --tiebreak=index --no-multi \
-            --ansi --preview="$_viewGitLogLine" \
-                --header "enter to view, alt-y to copy hash" \
-                --bind "enter:execute:$_viewGitLogLine   | less -R" \
-                --bind "alt-y:execute:$_gitLogLineToHash | xclip"
-}
-
-# gfdiff - show selected file diff
-gfdiff() {
-  git ls-files --modified --others --exclude-standard | fzf -m | xargs git diff 
 }
 
 
@@ -176,3 +160,6 @@ function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 
 # Setup travis
 [ -f /Users/matthieu/.travis/travis.sh ] && source /Users/matthieu/.travis/travis.sh
+
+# Setup Forgit
+[ -f ~/.dotfiles/forgit.plugin.zsh ] && source ~/.dotfiles/forgit.plugin.zsh
