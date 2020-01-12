@@ -53,6 +53,10 @@ alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </d
 alias gcb="git co -b"
 alias gz="g cz"
 alias gci="g ci -m"
+alias gia="g ia"
+alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
+_gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
+_viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
 # Inshallah
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
@@ -88,12 +92,44 @@ kdel() {
   kgpo | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
 }
 
+### Git ###
+# Make PR
 gpr() {
   TITLE=${1}
   MESSAGE=$(echo $TITLE | cat - ./PULL_REQUEST_TEMPLATE.md)
   hub pull-request -m "${MESSAGE}" --browse
 }
 
+# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+fgco() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+
+# fgcoci - checkout git commit with previews
+fgcoci() {
+  local commit
+  commit=$( glNoGraph |
+    fzf --no-sort --reverse --tiebreak=index --no-multi \
+        --ansi --preview="$_viewGitLogLine" ) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+# fglog - git commit browser with previews
+fglog() {
+    glNoGraph |
+        fzf --no-sort --reverse --tiebreak=index --no-multi \
+            --ansi --preview="$_viewGitLogLine" \
+                --header "enter to view, alt-y to copy hash" \
+                --bind "enter:execute:$_viewGitLogLine   | less -R" \
+                --bind "alt-y:execute:$_gitLogLineToHash | xclip"
+}
+
+### Z ###
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
