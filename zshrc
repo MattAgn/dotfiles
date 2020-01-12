@@ -104,6 +104,11 @@ glogp() {
                 --bind "alt-y:execute:$_gitLogLineToHash | xclip"
 }
 
+# gfdiff - show selected file diff
+gfdiff() {
+  git ls-files --modified --others --exclude-standard | fzf -m | xargs git diff 
+}
+
 
 ### Docker ###
 # Sh on a container
