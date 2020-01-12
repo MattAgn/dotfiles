@@ -7,9 +7,7 @@
 	ci = commit
 	st = status
 	rb = rebase
-  ia = !git add $(git ls-files --modified --others --exclude-standard | fzf -m)
-
-       	autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autosquash --autostash -i $COMMIT^; }; f"
+	autofixup = "!f() { COMMIT=$(git log --pretty=oneline | fzf | awk '{print $1}'); git commit --fixup $COMMIT; GIT_SEQUENCE_EDITOR=: git rebase --autosquash --autostash -i $COMMIT^; }; f"
 [push]
 	default = current
 [core]
