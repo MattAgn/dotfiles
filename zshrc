@@ -38,23 +38,23 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 ##### ALIASES & FUNCTIONS ######
 #######################################################
 
-# VSCode
+### VSCode ###
 alias co="code ."
 
-# Node and git
+### Node ###
 alias s="git stash && git co staging && git pull && yarn"
 alias m="git stash && git co master && git pull && yarn"
 alias ys="yarn start"
 alias yt="yarn test"
 alias yl="yarn lint"
 
-# Mobile
+### Mobile ###
 alias rnand="react-native run-android"
 alias rnios="react-native run-ios --simulator='iPhone SE'"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </dev/null &>/dev/null &"
 
 
-# Inshallah
+### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
 alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
@@ -76,8 +76,8 @@ gpr() {
   hub pull-request -m "${MESSAGE}" --browse
 }
 
-# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
-fgco() {
+# gcob - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+gcob() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
   branch=$(echo "$branches" |
@@ -85,8 +85,8 @@ fgco() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# fgcoci - checkout git commit with previews
-fgcoci() {
+# gcoci - checkout git commit with previews
+gcoci() {
   local commit
   commit=$( glNoGraph |
     fzf --no-sort --reverse --tiebreak=index --no-multi \
@@ -94,8 +94,8 @@ fgcoci() {
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
-# fglog - git commit browser with previews
-fglog() {
+# glogp - git commit browser with previews
+glogp() {
     glNoGraph |
         fzf --no-sort --reverse --tiebreak=index --no-multi \
             --ansi --preview="$_viewGitLogLine" \
