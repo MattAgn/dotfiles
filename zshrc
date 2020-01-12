@@ -17,6 +17,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+
 ######################################################
 ##### PATH & VARIABLES ######
 #######################################################
@@ -34,22 +35,32 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 
 
 ######################################################
-##### ALIASES ######
+##### ALIASES & FUNCTIONS ######
 #######################################################
 
 # VSCode
 alias co="code ."
+
 # Node and git
 alias s="git stash && git co staging && git pull && yarn"
 alias m="git stash && git co master && git pull && yarn"
 alias ys="yarn start"
 alias yt="yarn test"
 alias yl="yarn lint"
+
 # Mobile
 alias rnand="react-native run-android"
 alias rnios="react-native run-ios --simulator='iPhone SE'"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </dev/null &>/dev/null &"
-# Git
+
+
+# Inshallah
+alias ins="cd ~/projects/inshallah/InshAllah-App"
+alias inss="cd ~/projects/inshallah/InshAllah-Server"
+alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
+
+
+### Git ###
 alias gcb="git co -b"
 alias gz="g cz"
 alias gci="g ci -m"
@@ -57,16 +68,42 @@ alias gia="g ia"
 alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
 _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
 _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
-# Inshallah
-alias ins="cd ~/projects/inshallah/InshAllah-App"
-alias inss="cd ~/projects/inshallah/InshAllah-Server"
-alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Make PR
+gpr() {
+  TITLE=${1}
+  MESSAGE=$(echo $TITLE | cat - ./PULL_REQUEST_TEMPLATE.md)
+  hub pull-request -m "${MESSAGE}" --browse
+}
 
-######################################################
-##### FUNCTIONS ######
-#######################################################
+# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+fgco() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# fgcoci - checkout git commit with previews
+fgcoci() {
+  local commit
+  commit=$( glNoGraph |
+    fzf --no-sort --reverse --tiebreak=index --no-multi \
+        --ansi --preview="$_viewGitLogLine" ) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
+
+# fglog - git commit browser with previews
+fglog() {
+    glNoGraph |
+        fzf --no-sort --reverse --tiebreak=index --no-multi \
+            --ansi --preview="$_viewGitLogLine" \
+                --header "enter to view, alt-y to copy hash" \
+                --bind "enter:execute:$_viewGitLogLine   | less -R" \
+                --bind "alt-y:execute:$_gitLogLineToHash | xclip"
+}
+
 
 ### Docker ###
 # Sh on a container
@@ -92,43 +129,6 @@ kdel() {
   kgpo | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
 }
 
-### Git ###
-# Make PR
-gpr() {
-  TITLE=${1}
-  MESSAGE=$(echo $TITLE | cat - ./PULL_REQUEST_TEMPLATE.md)
-  hub pull-request -m "${MESSAGE}" --browse
-}
-
-# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
-fgco() {
-  local branches branch
-  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
-
-# fgcoci - checkout git commit with previews
-fgcoci() {
-  local commit
-  commit=$( glNoGraph |
-    fzf --no-sort --reverse --tiebreak=index --no-multi \
-        --ansi --preview="$_viewGitLogLine" ) &&
-  git checkout $(echo "$commit" | sed "s/ .*//")
-}
-
-# fglog - git commit browser with previews
-fglog() {
-    glNoGraph |
-        fzf --no-sort --reverse --tiebreak=index --no-multi \
-            --ansi --preview="$_viewGitLogLine" \
-                --header "enter to view, alt-y to copy hash" \
-                --bind "enter:execute:$_viewGitLogLine   | less -R" \
-                --bind "alt-y:execute:$_gitLogLineToHash | xclip"
-}
-
 ### Z ###
 unalias z 2> /dev/null
 z() {
@@ -147,11 +147,8 @@ source ~/.bashrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
-
-
-
 ######################################################
-##### GOOGLE CLOUD & KUBERNETES ######
+##### GOOGLE CLOUD & KUBERNETES CONFIG ######
 #######################################################
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -165,6 +162,11 @@ if [ -f '/Users/matthieu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 
 
+######################################################
+##### SETUP ######
+#######################################################
+# Setup fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# added by travis gem
+# Setup travis
 [ -f /Users/matthieu/.travis/travis.sh ] && source /Users/matthieu/.travis/travis.sh
