@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Android emulator</name>
+  <version>1.0.0</version>
+  <bundle>anicks.com.alfred.android_emulator</bundle>
+  <updated>1551790757</updated>
+  <file>android_emulator_v1.0.1.alfredworkflow</file>
+</workflow>

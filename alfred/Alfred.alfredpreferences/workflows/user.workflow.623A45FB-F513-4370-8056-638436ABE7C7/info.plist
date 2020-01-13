@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>AB5B9F83-B228-4B85-A965-91E1F4AF3A69</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7032FA76-B663-4D0E-8F91-7F5F32EC63F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matthieu</string>
+	<key>description</key>
+	<string>Trello shortcuts</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Trello</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"ins","arg":"https:\/\/trello.com\/b\/uyMbGaND\/inshallah","subtitle":"Inshallah"},{"title":"insb","arg":"https:\/\/trello.com\/b\/eZIjO9Ij\/inshallah-backlog?menu=filter&amp;filter=label:bug%20-%3E%20QRQC","subtitle":"Inshallah backlog"},{"title":"prog","arg":"https:\/\/trello.com\/b\/hA3Wzf3S\/progression-bam-matthieu","subtitle":"Progression BAM"}]</string>
+				<key>keyword</key>
+				<string>t</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>t &lt;shortcut&gt;</string>
+				<key>title</key>
+				<string>Trello shortcuts</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>AB5B9F83-B228-4B85-A965-91E1F4AF3A69</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7032FA76-B663-4D0E-8F91-7F5F32EC63F5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>7032FA76-B663-4D0E-8F91-7F5F32EC63F5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>375</integer>
+			<key>ypos</key>
+			<integer>145</integer>
+		</dict>
+		<key>AB5B9F83-B228-4B85-A965-91E1F4AF3A69</key>
+		<dict>
+			<key>xpos</key>
+			<integer>140</integer>
+			<key>ypos</key>
+			<integer>145</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

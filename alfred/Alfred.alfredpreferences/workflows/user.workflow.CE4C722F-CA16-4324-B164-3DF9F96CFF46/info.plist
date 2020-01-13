@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>2E8315C3-E8B1-48E5-9593-6E79C53C21DC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>097910A9-1875-4779-9359-530BE0CC763B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matthieu</string>
+	<key>description</key>
+	<string>Use "code" to open files/folder with Visual Studio Code</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>VSCode Open</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"insa","arg":"~\/projects\/inshallah\/InshAllah-App","subtitle":"Inshallah-App"},{"title":"inss","arg":"~\/projects\/inshallah\/InshAllah-Server","subtitle":"Inshallah-Server"},{"title":"rnt","arg":"~\/projects\/TestExamples","subtitle":"React Native Testing"},{"title":"insi","arg":"~\/projects\/inshallah\/InshAllah-Infra","subtitle":"InshAllah-Infra"}]</string>
+				<key>keyword</key>
+				<string>co</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Open Visual Studio Code Shortcut</string>
+				<key>title</key>
+				<string>VSCode Shortcut</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>2E8315C3-E8B1-48E5-9593-6E79C53C21DC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>097910A9-1875-4779-9359-530BE0CC763B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Using the keyword "f", search for only folders within your home folder.
+
+Hit Return to open the file, or Alt + Return to reveal it in Finder.</string>
+	<key>uidata</key>
+	<dict>
+		<key>097910A9-1875-4779-9359-530BE0CC763B</key>
+		<dict>
+			<key>note</key>
+			<string>2. Pressing the Return key opens the folder you selected in Visual Studio Code</string>
+			<key>xpos</key>
+			<integer>385</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+		<key>2E8315C3-E8B1-48E5-9593-6E79C53C21DC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>145</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.1</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
