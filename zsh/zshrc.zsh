@@ -69,6 +69,7 @@ _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always 
 
 # Make PR
 gpr() {
+  cd $(git rev-parse --show-toplevel)
   TITLE=${1}
   MESSAGE=$(echo $TITLE | cat - ./PULL_REQUEST_TEMPLATE.md)
   hub pull-request -m "${MESSAGE}" --browse
@@ -136,6 +137,8 @@ z() {
   [ $# -gt 0 ] && _z "$*" && return
   cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
+
+### Diverse ###
 
 # kill process
 fkill() {
