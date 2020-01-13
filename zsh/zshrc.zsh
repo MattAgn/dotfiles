@@ -129,6 +129,10 @@ ksh() {
 kdel() {
   kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
 }
+# Port forward read
+kpfdb() {
+  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5433:5432
+}
 
 
 ### Diverse ###
