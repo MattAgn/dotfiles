@@ -115,7 +115,7 @@ ksh() {
 }
 # Delete a pod
 kdel() {
-  kgpo | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
+  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
 }
 
 ### Z ###
