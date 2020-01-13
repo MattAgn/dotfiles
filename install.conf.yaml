@@ -1,0 +1,22 @@
+# Settings
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    # Zsh
+    ~/.zshrc: zsh/zshrc.zsh
+    # Amethyst
+    ~/.amethyst: amethyst/.amethyst.json
+    # VS Code
+    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: vscode/keybindings.json
+    ~/Library/Application Support/Code/User/snippets: vscode/snippets
+    # Git
+    ~/.gitconfig: git/gitconfig
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
