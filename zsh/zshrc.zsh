@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 #######################################################
 export TILLER_NAMESPACE=tiller
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export emu_path=$ANDROID_HOME/emulator
+export FZF_DEFAULT_OPTS="--layout=reverse"
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -31,7 +31,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-
 
 ######################################################
 ##### ALIASES & FUNCTIONS ######
@@ -93,6 +92,11 @@ gcoci() {
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
+# Commit all in a Work in progress commit
+gwp() {
+  git add .
+  git ci -m ":construction: Work in progress"
+}
 
 ### Docker ###
 # Sh on a container
@@ -123,6 +127,27 @@ unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
   cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+
+### Diverse ###
+
+# kill process
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+
+# Search dirs and cd to them
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
 }
 
 ######################################################
@@ -161,4 +186,4 @@ function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 [ -f /Users/matthieu/.travis/travis.sh ] && source /Users/matthieu/.travis/travis.sh
 
 # Setup Forgit
-[ -f ~/.dotfiles/forgit.plugin.zsh ] && source ~/.dotfiles/forgit.plugin.zsh
+[ -f ~/.dotfiles/zsh/forgit.plugin.zsh ] && source ~/.dotfiles/zsh/forgit.plugin.zsh
