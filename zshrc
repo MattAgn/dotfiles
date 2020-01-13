@@ -7,7 +7,6 @@ export ZSH="/Users/matthieu/.oh-my-zsh"
 
 
 ZSH_THEME="robbyrussell"
-ENABLE_CORRECTION="true"
 
 plugins=(
   z
