@@ -5,10 +5,7 @@
 	<key>application</key>
 	<integer>1</integer>
 	<key>custom</key>
-	<string>-- This is v0.7 of the custom script for AlfredApp for iTerm 3.1.1+
--- created by Sinan Eldem www.sinaneldem.com.tr
-
-on alfred_script(q)
+	<string>on alfred_script(q)
 	if application "iTerm2" is running or application "iTerm" is running then
 		run script "
 			on run {q}
