@@ -61,7 +61,7 @@
 				<key>fixedorder</key>
 				<false/>
 				<key>items</key>
-				<string>[{"title":"inss","arg":"https:\/\/github.com\/inshteam\/Inshallah-Server\/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc","subtitle":"Inshallah-Server"},{"title":"insa","arg":"https:\/\/github.com\/inshteam\/Inshallah-App\/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc","subtitle":"Inshallah-App"},{"title":"insi","arg":"https:\/\/github.com\/inshteam\/Inshallah-Infra","subtitle":"Inshallah-Infra"},{"title":"rnt","arg":"https:\/\/github.com\/bamlab\/react-native-testing","subtitle":"React Native Testing"}]</string>
+				<string>[{"title":"inss","arg":"https:\/\/github.com\/inshteam\/Inshallah-Server\/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc","subtitle":"Inshallah-Server"},{"title":"insa","arg":"https:\/\/github.com\/inshteam\/Inshallah-App\/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc","subtitle":"Inshallah-App"},{"title":"insi","arg":"https:\/\/github.com\/inshteam\/Inshallah-Infra","subtitle":"Inshallah-Infra"},{"title":"rnt","arg":"https:\/\/github.com\/bamlab\/react-native-testing","subtitle":"React Native Testing"},{"title":"rntl","arg":"https:\/\/github.com\/callstack\/react-native-testing-library","subtitle":"React Native Testing Library"}]</string>
 				<key>keyword</key>
 				<string>g</string>
 				<key>runningsubtext</key>
