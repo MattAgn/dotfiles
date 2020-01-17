@@ -123,7 +123,7 @@ dstopc() {
 ### Kubernetes ###
 # Sh on a kubernetes container
 ksh() {
-  kgpo | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl exec -it {} sh
+  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl exec -it {} sh
 }
 # Delete a pod
 kdel() {
@@ -133,9 +133,13 @@ kdel() {
 kpfdb() {
   kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5433:5432
 }
+# Port forward microservice
+kpfms() {
+  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 54334:50051
+}
 # Get logs for a deployments (associated pods)
 klog() {
-  kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=150 | jq '.'
+  kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
 }
 
 
