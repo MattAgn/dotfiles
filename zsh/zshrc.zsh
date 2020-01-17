@@ -1,20 +1,30 @@
- ######################################################
- ##### ZSH ######
- #######################################################
+######################################################
+##### ZSH ######
+#######################################################
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/matthieu/.oh-my-zsh"
+source ~/.dotfiles/zsh/antigen.zsh
 
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle z
+antigen bundle git
+antigen bundle command-not-found
+antigen bundle fzf
+antigen bundle wfxr/forgit
+antigen bundle wfxr/emoji-cli
+antigen bundle zsh-autosuggestions
+antigen bundle tarruda/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-plugins=(
-  z
-	git
-	zsh-autosuggestions
-)
+# Load the theme.
+antigen theme robbyrussell
 
-source $ZSH/oh-my-zsh.sh
+# Tell Antigen that you're done.
+antigen apply
+
 
 
 ######################################################
@@ -23,6 +33,14 @@ source $ZSH/oh-my-zsh.sh
 export TILLER_NAMESPACE=tiller
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export FZF_DEFAULT_OPTS="--layout=reverse"
+export FORGIT_FZF_DEFAULT_OPTS="
+  $FZF_DEFAULT_OPTS
+  --ansi
+  --height='80%'
+  --reverse
+  --preview-window='right:60%'
+  $FORGIT_FZF_DEFAULT_OPTS
+  "
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -51,18 +69,19 @@ alias rnand="react-native run-android"
 alias rnios="react-native run-ios'"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </dev/null &>/dev/null &"
 
-
 ### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
 alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
-
 
 ### Git ###
 alias gcb="git co -b"
 alias gz="g cz"
 alias gci="g ci -m"
 alias gap="g add -p"
+alias "ga"='forgit::add'
+alias "glg"='forgit::log'
+alias "gdiff"='forgit::diff'
 alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr% C(auto)%an" "$@"'
 _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
 _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
@@ -197,14 +216,10 @@ if [ -f '/Users/matthieu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 
 
-######################################################
-##### SETUP ######
-#######################################################
-# Setup fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Setup travis
 [ -f /Users/matthieu/.travis/travis.sh ] && source /Users/matthieu/.travis/travis.sh
 
-# Setup Forgit
-[ -f ~/.dotfiles/zsh/forgit.plugin.zsh ] && source ~/.dotfiles/zsh/forgit.plugin.zsh
+
+# Tell Antigen that you're done.
+antigen apply
