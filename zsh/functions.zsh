@@ -32,6 +32,15 @@ gcoci() {
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
+# gri - interactive rebase
+gri() {
+  local commit
+  commit=$( glNoGraph |
+    fzf --no-sort --reverse --tiebreak=index --no-multi \
+        --ansi --preview="$_viewGitLogLine" ) &&
+  git rebase -i $(echo "$commit" | sed "s/ .*//")
+}
+
 # Commit all in a Work in progress commit
 gwp() {
   git add .
@@ -40,7 +49,7 @@ gwp() {
 
 
 ######################################################
-##### DOKCER ######
+##### DOCKER ######
 #######################################################
 
 # Sh on a container

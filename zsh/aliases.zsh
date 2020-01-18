@@ -24,6 +24,9 @@ alias gcb="git co -b"
 alias gz="g cz"
 alias gci="g ci -m"
 alias gap="g add -p"
+alias gs="git stash"
+alias gsp="git stash pop"
+alias gpf="git push --force-with-lease"
 
 ### Docker ###
 alias dps="docker ps"
