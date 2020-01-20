@@ -11,7 +11,7 @@ alias yl="yarn lint"
 
 ### Mobile ###
 alias rnand="react-native run-android"
-alias rnios="react-native run-ios'"
+alias rnios="react-native run-ios"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </dev/null &>/dev/null &"
 
 ### Inshallah ###
