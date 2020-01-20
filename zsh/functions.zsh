@@ -41,6 +41,15 @@ gri() {
   git rebase -i $(echo "$commit" | sed "s/ .*//")
 }
 
+# grsoft - soft reset
+grsoft() {
+  local commit
+  commit=$( glNoGraph |
+    fzf --no-sort --reverse --tiebreak=index --no-multi \
+        --ansi --preview="$_viewGitLogLine" ) &&
+  git reset --soft $(echo "$commit" | sed "s/ .*//")
+}
+
 # Commit all in a Work in progress commit
 gwp() {
   git add .
