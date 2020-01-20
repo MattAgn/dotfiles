@@ -1,0 +1,36 @@
+{
+	"Markdown typescript code": {
+		"prefix": "mdts",
+		"body": [
+			"```typescript",
+			"  ${1:code}",
+			"```"
+		],
+		"description": "Markdown typescript code"
+	},
+	"Markdown javascript code": {
+		"prefix": "mdjs",
+		"body": [
+			"```javascript",
+			"  ${1:code}",
+			"```"
+		],
+		"description": "Markdown javascript code"
+	},
+	"Markdown jsx code": {
+		"prefix": "mdjsx",
+		"body": [
+			"```jsx",
+			"  ${1:code}",
+			"```"
+		],
+		"description": "Markdown jsx code"
+	},
+	"Markdown link": {
+		"prefix": "mdlink",
+		"body": [
+			"[${1:title}](${2:link})"
+		],
+		"description": "Markdown link"
+	}
+}

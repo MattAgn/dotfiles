@@ -15,7 +15,7 @@
     ~/Library/Application Support/Code/User/snippets: vscode/snippets
     # Git
     ~/.gitconfig: git/gitconfig
-    # Alfred 
+    # Alfred
     ~/alfred/Alfred.alfredpreferences: alfred/Alfred.alfredpreferences
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
