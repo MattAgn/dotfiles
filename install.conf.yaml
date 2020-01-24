@@ -18,5 +18,7 @@
     ~/.czrc: git/czrc
     # Alfred
     ~/alfred/Alfred.alfredpreferences: alfred/Alfred.alfredpreferences
+    # Vim
+    ~/.vim: vim
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
