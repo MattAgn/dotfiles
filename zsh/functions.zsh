@@ -10,7 +10,7 @@ _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always 
 gpr() {
   cd $(git rev-parse --show-toplevel)
   TITLE=${1}
-  MESSAGE=$(echo $TITLE | cat - ./PULL_REQUEST_TEMPLATE.md)
+  MESSAGE=$(echo $TITLE'\n' | cat - ./PULL_REQUEST_TEMPLATE.md)
   hub pull-request -m "${MESSAGE}" --browse
 }
 
@@ -93,7 +93,8 @@ kdel() {
 }
 # Port forward read
 kpfdb() {
-  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5433:5432
+  kubectl get pods | grep "pgsql-read*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5433:5432 &
+  kubectl get pods | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5434:5432
 }
 # Port forward microservice
 kpfms() {
