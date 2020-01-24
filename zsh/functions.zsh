@@ -104,7 +104,14 @@ kpfms() {
 klog() {
   kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
 }
-
+# Get logs for api gtw
+kloggtw() {
+  kubectl get deployments | grep "api-gateway*"| awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
+}
+# Get logs for ms user
+kloguser() {
+  kubectl get deployments | grep "microservice-user*" | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
+}
 
 ######################################################
 ##### DIVERSE ######
