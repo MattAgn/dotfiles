@@ -85,4 +85,6 @@
     ],
     "window.titleBarStyle": "native",
     "diffEditor.ignoreTrimWhitespace": false,
+    "dart.flutterSdkPath": "/Users/matthieu/flutter",
+    "dart.openDevTools": "flutter",
 }
