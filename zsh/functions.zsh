@@ -88,8 +88,24 @@ ksh() {
   kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl exec -it {} sh
 }
 # Delete a pod
-kdel() {
+kdelpo() {
   kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
+}
+# Delete a job
+kdeljo() {
+  kubectl get jobs | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete jobs
+}
+# Describe a pod
+kdspo() {
+  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl describe po 
+}
+# Describe a job
+kdsjo() {
+  kubectl get jobs | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl describe jobs
+}
+# Get jobs
+kgjo() {
+  kubectl get jobs
 }
 # Port forward read
 kpfdb() {
