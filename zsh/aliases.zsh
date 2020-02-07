@@ -8,6 +8,7 @@ alias m="git stash && git co master && git pull && yarn"
 alias ys="yarn start"
 alias yt="yarn test"
 alias yl="yarn lint"
+alias ylf="yarn lint:fix"
 
 ### Mobile ###
 alias rnand="react-native run-android"
