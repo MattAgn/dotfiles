@@ -14,6 +14,9 @@ alias rnand="react-native run-android"
 alias rnios="react-native run-ios"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </dev/null &>/dev/null &"
 
+### WorkoutApp ###
+alias woap="cd ~/projects/learning/WorkoutApp"
+
 ### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"

@@ -4,6 +4,7 @@ export TILLER_NAMESPACE=tiller
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 export FZF_DEFAULT_OPTS="--layout=reverse"
+export GCP_PROJECT="inshallah-staging"
 export FORGIT_FZF_DEFAULT_OPTS="
   $FZF_DEFAULT_OPTS
   --ansi
