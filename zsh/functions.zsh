@@ -110,7 +110,8 @@ kgjo() {
 # Port forward read
 kpfdb() {
   kubectl get pods | grep "pgsql-read*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5433:5432 &
-  kubectl get pods | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5434:5432
+  kubectl get pods | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5434:5432 &
+  kubectl get pods | grep "pgsql-session*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5435:5432
 }
 # Port forward microservice
 kpfms() {
