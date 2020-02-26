@@ -13,7 +13,7 @@ alias ylf="yarn lint:fix"
 ### Mobile ###
 alias rnand="react-native run-android"
 alias rnios="react-native run-ios"
-alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_3 </dev/null &>/dev/null &"
+alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_2 </dev/null &>/dev/null &"
 
 ### WorkoutApp ###
 alias woap="cd ~/projects/learning/WorkoutApp"
