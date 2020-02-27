@@ -8,6 +8,8 @@ alias m="git stash && git co master && git pull && yarn"
 alias ys="yarn start"
 alias yt="yarn test"
 alias yl="yarn lint"
+alias yb="yarn build"
+alias ybw="yarn build:watch"
 alias ylf="yarn lint:fix"
 
 ### Mobile ###
@@ -22,6 +24,8 @@ alias woap="cd ~/projects/learning/WorkoutApp"
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
 alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
+alias mi="make install"
+alias mb="make build"
 
 ### Git ###
 alias gcb="git co -b"
