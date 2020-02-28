@@ -26,6 +26,16 @@ alias inss="cd ~/projects/inshallah/InshAllah-Server"
 alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
 alias mi="make install"
 alias mb="make build"
+alias mspmt="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-payment"
+alias msuser="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-user"
+alias mssession="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-session"
+alias msevent="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-eventstore"
+alias msinter="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-interaction"
+alias apigtw="cd ~/projects/inshallah/InshAllah-Server/packages/api-gateway"
+alias msalgo="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-algorithm"
+alias ums="cd ~/projects/inshallah/InshAllah-Server/packages/utils-microservice"
+alias igrpc="cd ~/projects/inshallah/InshAllah-Server/packages/interface-grpc"
+
 
 ### Git ###
 alias gcb="git co -b"
