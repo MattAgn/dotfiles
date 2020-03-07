@@ -8,7 +8,6 @@
     "editor.formatOnPaste": true,
     "editor.autoClosingBrackets": "always",
     "editor.autoClosingQuotes": "always",
-    "editor.defaultFormatter": "Dart-Code.dart-code",
     "editor.tabSize": 2,
     "editor.fontLigatures": true,
     "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
