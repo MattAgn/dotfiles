@@ -1,4 +1,6 @@
 
+alias dot="cd ~/.dotfiles"
+
 ### VSCode ###
 alias co="code ."
 
@@ -19,6 +21,10 @@ alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_2 </d
 
 ### WorkoutApp ###
 alias woap="cd ~/projects/learning/WorkoutApp"
+
+
+### Snake flutter ###
+alias snake="cd ~/projects/snake_game"
 
 ### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
