@@ -121,6 +121,9 @@ kpfms() {
 klog() {
   kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
 }
+klograw() {
+  kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 
+}
 # Get logs for api gtw
 kloggtw() {
   kubectl get deployments | grep "api-gateway*"| awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
