@@ -29,6 +29,7 @@ alias snake="cd ~/projects/snake_game"
 ### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
+alias insw="cd ~/projects/inshallah/InshAllah-Web"
 alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
 alias mi="make install"
 alias mb="make build"
