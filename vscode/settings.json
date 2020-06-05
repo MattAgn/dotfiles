@@ -93,5 +93,6 @@
   "oneDarkPro.vivid": true,
   "workbench.colorTheme": "One Dark Pro",
   "oneDarkPro.italic": false,
-  "oneDarkPro.bold": false
+  "oneDarkPro.bold": false,
+  "workbench.editor.scrollToSwitchTabs": true
 }

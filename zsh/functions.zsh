@@ -83,54 +83,66 @@ dstopc() {
 ##### Kubernetes ######
 #######################################################
 
+gstaging() {
+  gcloud beta container clusters get-credentials gke-cluster-staging --region europe-west4 --project inshallah-staging
+}
+
+gprod() {
+  gcloud beta container clusters get-credentials gke-cluster-production --region europe-west4 --project inshallah-production
+}
+
+gmigration() {
+  gcloud beta container clusters get-credentials gke-cluster-migration --region europe-west4 --project inshallah-staging
+}
+
 # Sh on a kubernetes container
 ksh() {
-  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl exec -it {} sh
+  kubectl get pods --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl exec -it --namespace=microservice {} sh
 }
 # Delete a pod
 kdelpo() {
-  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete po 
+  kubectl get pods --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete --namespace=microservice po 
 }
 # Delete a job
 kdeljo() {
-  kubectl get jobs | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete jobs
+  kubectl get jobs --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl delete --namespace=microservice jobs
 }
 # Describe a pod
 kdspo() {
-  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl describe po 
+  kubectl get pods --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl describe --namespace=microservice po 
 }
 # Describe a job
 kdsjo() {
-  kubectl get jobs | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl describe jobs
+  kubectl get jobs --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs kubectl describe jobs --namespace=microservice
 }
 # Get jobs
 kgjo() {
-  kubectl get jobs
+  kubectl get jobs --namespace=microservice
 }
 # Port forward read
 kpfdb() {
-  kubectl get pods | grep "pgsql-read*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5433:5432 &
-  kubectl get pods | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5434:5432 &
-  kubectl get pods | grep "pgsql-session*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 5435:5432
+  kubectl get pods --namespace=microservice | grep "pgsql-read*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5433:5432 &
+  kubectl get pods --namespace=microservice | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5434:5432 &
+  kubectl get pods --namespace=microservice | grep "pgsql-session*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5435:5432
 }
 # Port forward microservice
 kpfms() {
-  kubectl get pods | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward {} 54334:50051
+  kubectl get pods --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 54334:50051
 }
 # Get logs for a deployments (associated pods)
 klog() {
-  kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
+  kubectl get deployments --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} --namespace=microservice -o=raw --tail=25 | jq '.'
 }
 klograw() {
-  kubectl get deployments | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 
+  kubectl get deployments --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -I {} stern {} -c {} --namespace=microservice -o=raw --tail=25 
 }
 # Get logs for api gtw
 kloggtw() {
-  kubectl get deployments | grep "api-gateway*"| awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
+  kubectl get deployments --namespace=microservice | grep "api-gateway*"| awk '{print $1}' | xargs -o -I {} stern {} -c {} --namespace=microservice -o=raw --tail=25 | jq '.'
 }
 # Get logs for ms user
 kloguser() {
-  kubectl get deployments | grep "microservice-user*" | awk '{print $1}' | xargs -o -I {} stern {} -c {} -o=raw --tail=25 | jq '.'
+  kubectl get deployments --namespace=microservice | grep "microservice-user*" | awk '{print $1}' | xargs -o -I {} stern {} -c {} --namespace=microservice -o=raw --tail=25 | jq '.'
 }
 
 ######################################################
