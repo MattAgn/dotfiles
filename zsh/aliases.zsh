@@ -20,7 +20,8 @@ alias rnios="react-native run-ios"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_2 </dev/null &>/dev/null &"
 
 ### WorkoutApp ###
-alias woap="cd ~/projects/learning/WorkoutApp"
+alias woap="cd ~/projects/woap/WorkoutApp"
+alias woaps="cd ~/projects/woap/WorkoutServer"
 
 
 ### Snake flutter ###
