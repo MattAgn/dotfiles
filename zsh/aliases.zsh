@@ -21,7 +21,7 @@ alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_2 </d
 
 ### WorkoutApp ###
 alias woap="cd ~/projects/woap/WorkoutApp"
-alias woaps="cd ~/projects/woap/workoutserver"
+alias woaps="cd ~/projects/woap/workout_server"
 
 
 ### Snake flutter ###
