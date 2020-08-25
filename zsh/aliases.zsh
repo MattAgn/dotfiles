@@ -58,4 +58,7 @@ alias gpf="git push --force-with-lease"
 
 ### Docker ###
 alias dps="docker ps"
+alias dcup="docker-compose up"
 
+### Elixir ###
+alias dcmix="docker-compose run server mix"
