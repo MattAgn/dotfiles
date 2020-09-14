@@ -1,5 +1,5 @@
 
-alias dot="cd ~/.dotfiles"
+alias dotfiles="cd ~/.dotfiles"
 
 ### VSCode ###
 alias co="code ."
@@ -38,6 +38,12 @@ alias mi="make install"
 alias mb="make build"
 alias mspmt="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-payment"
 alias msuser="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-user"
+alias msmigration="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-migration"
+alias msphoto="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-photo"
+alias mssettings="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-settings"
+alias msprofile="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-public-profile"
+alias msaccount="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-account"
+alias mssupport="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-support"
 alias mssession="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-session"
 alias msevent="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-eventstore"
 alias msinter="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-interaction"

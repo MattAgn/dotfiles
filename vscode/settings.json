@@ -94,5 +94,15 @@
   "workbench.colorTheme": "One Dark Pro",
   "oneDarkPro.italic": false,
   "oneDarkPro.bold": false,
-  "workbench.editor.scrollToSwitchTabs": true
+  "workbench.editor.scrollToSwitchTabs": true,
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": true,
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+  }
 }
