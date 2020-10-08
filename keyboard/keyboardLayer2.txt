@@ -1,0 +1,235 @@
+{
+  "keymap": [
+    {
+      "keyCode": 41,
+      "label": "Esc"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 82,
+      "label": "↑"
+    },
+    {
+      "keyCode": 76,
+      "label": "Del"
+    },
+    {
+      "keyCode": 42,
+      "label": "Bksp",
+      "verbose": "Backspace"
+    },
+    {
+      "keyCode": 43,
+      "label": "Tab"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 80,
+      "label": "←"
+    },
+    {
+      "keyCode": 81,
+      "label": "↓"
+    },
+    {
+      "keyCode": 79,
+      "label": "→"
+    },
+    {
+      "keyCode": 40,
+      "label": "Enter"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 20481,
+      "label": "Up",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 40,
+      "label": "Enter"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 227,
+      "label": "LCmd",
+      "verbose": "Left Cmd"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    },
+    {
+      "keyCode": 44,
+      "label": "Space"
+    },
+    {
+      "keyCode": 20484,
+      "label": "Left",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 20482,
+      "label": "Down",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 20488,
+      "label": "Right",
+      "extraLabel": "Mouse"
+    },
+    {
+      "keyCode": 65535,
+      "label": "",
+      "verbose": "Transparent"
+    }
+  ],
+  "palette": []
+}
