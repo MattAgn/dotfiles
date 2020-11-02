@@ -125,6 +125,17 @@ kpfdb() {
   kubectl get pods --namespace=microservice | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5434:5432 &
   kubectl get pods --namespace=microservice | grep "pgsql-session*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5435:5432
 }
+
+kpfdbprod() {
+  kubectl get pods --namespace=microservice | grep "pgsql-read*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5439:5432 &
+  kubectl get pods --namespace=microservice | grep "pgsql-eventstore*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5437:5432 &
+  kubectl get pods --namespace=microservice | grep "pgsql-session*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5438:5432
+}
+
+kpfdbpreprod() {
+  kubectl get pods --namespace=microservice | grep "pgsql-read*" |  awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 5440:5432
+}
+
 # Port forward microservice
 kpfms() {
   kubectl get pods --namespace=microservice | awk 'NR>1' | fzf | awk '{print $1}' | xargs -o -J {} kubectl port-forward --namespace=microservice {} 54334:50051

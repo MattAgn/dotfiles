@@ -104,5 +104,7 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true
-  }
+  },
+  "eslint.format.enable": true,
+  "stories.username": "Singapore_butterfly"
 }

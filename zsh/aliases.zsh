@@ -52,6 +52,15 @@ alias msalgo="cd ~/projects/inshallah/InshAllah-Server/packages/microservice-alg
 alias ums="cd ~/projects/inshallah/InshAllah-Server/packages/utils-microservice"
 alias igrpc="cd ~/projects/inshallah/InshAllah-Server/packages/interface-grpc"
 
+### PUMP ###
+alias pump="cd /Users/matthieu/projects/pmu/pump"
+alias pbiz="cd /Users/matthieu/projects/pmu/pmu-business-logic"
+alias pco="cd /Users/matthieu/projects/pmu/pmu-pco-fetch"
+alias pnative="cd /Users/matthieu/projects/pmu/pump/packages/native"
+alias pshared="cd /Users/matthieu/projects/pmu/pump/packages/shared"
+alias pweb="cd /Users/matthieu/projects/pmu/pump/packages/web"
+
+
 
 ### Git ###
 alias gcb="git co -b"
