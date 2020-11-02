@@ -59,7 +59,8 @@ alias pco="cd /Users/matthieu/projects/pmu/pmu-pco-fetch"
 alias pnative="cd /Users/matthieu/projects/pmu/pump/packages/native"
 alias pshared="cd /Users/matthieu/projects/pmu/pump/packages/shared"
 alias pweb="cd /Users/matthieu/projects/pmu/pump/packages/web"
-
+alias start_vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
+alias kiil_vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 
 
 ### Git ###
