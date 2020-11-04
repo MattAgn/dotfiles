@@ -63,6 +63,9 @@ alias pweb="cd /Users/matthieu/projects/pmu/pump/packages/web"
 alias start_vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias kiil_vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias grdev="git co dev && git pull && g co - && g rebase dev"
+alias ywn="yarn workspace native"
+alias ywd="yarn workspace web"
+alias yws="yarn workspace shared"
 
 ### Git ###
 alias gcb="git co -b"
