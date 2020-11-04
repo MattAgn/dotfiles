@@ -13,6 +13,7 @@ alias yl="yarn lint"
 alias yb="yarn build"
 alias ybw="yarn build:watch"
 alias ylf="yarn lint:fix"
+alias y="yarn"
 
 ### Mobile ###
 alias rnand="react-native run-android"
@@ -61,7 +62,7 @@ alias pshared="cd /Users/matthieu/projects/pmu/pump/packages/shared"
 alias pweb="cd /Users/matthieu/projects/pmu/pump/packages/web"
 alias start_vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias kiil_vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
-
+alias grdev="git co dev && git pull && g co - && g rebase dev"
 
 ### Git ###
 alias gcb="git co -b"
@@ -69,8 +70,11 @@ alias gz="g cz"
 alias gci="g ci -m"
 alias gap="g add -p"
 alias gs="git stash"
+alias gsa="g add . && g stash"
 alias gsp="git stash pop"
 alias gpf="git push --force-with-lease"
+alias gpl="git pull"
+alias gr="git rebase"
 
 ### Docker ###
 alias dps="docker ps"
