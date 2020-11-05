@@ -7,6 +7,7 @@ alias co="code ."
 ### Node ###
 alias s="git stash && git co staging && git pull && yarn"
 alias m="git stash && git co master && git pull && yarn"
+alias dev="git stash && git co dev && git pull && yarn"
 alias ys="yarn start"
 alias yt="yarn test"
 alias yl="yarn lint"
