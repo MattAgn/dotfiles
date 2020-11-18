@@ -68,8 +68,10 @@ alias start_vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pa
 alias kiil_vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias grdev="git co dev && git pull && g co - && g rebase dev"
 alias ywn="yarn workspace native"
-alias ywd="yarn workspace web"
 alias yws="yarn workspace shared"
+alias yww="yarn workspace web"
+alias yw="yarn web"
+alias yns="ywn start"
 
 ### Git ###
 alias gcb="git co -b"
