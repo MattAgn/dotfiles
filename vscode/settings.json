@@ -1,7 +1,7 @@
 {
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
