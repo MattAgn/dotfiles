@@ -32,6 +32,9 @@ alias woaps="cd ~/projects/woap/WorkoutServer"
 ### Snake flutter ###
 alias snake="cd ~/projects/snake_game"
 
+### USI ###
+alias usiapp="cd /Users/matthieu/projects/usi/usi-protocols"
+
 ### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
