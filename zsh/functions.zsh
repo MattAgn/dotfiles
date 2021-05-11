@@ -21,6 +21,7 @@ gcob() {
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  git pull
 }
 
 # gcoci - checkout git commit with previews
@@ -53,7 +54,7 @@ grsoft() {
 # Commit all in a Work in progress commit
 gwp() {
   git add .
-  git ci -m ":construction: Work in progress"
+  git ci -m "WIP: Work in progress"
 }
 
 

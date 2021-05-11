@@ -35,6 +35,9 @@ alias snake="cd ~/projects/snake_game"
 ### USI ###
 alias usiapp="cd /Users/matthieu/projects/usi/usi-protocols"
 
+### CodeName ###
+alias cname="cd /Users/matthieu/projects/elixirLearning/code_name"
+
 ### Inshallah ###
 alias ins="cd ~/projects/inshallah/InshAllah-App"
 alias inss="cd ~/projects/inshallah/InshAllah-Server"
@@ -73,7 +76,7 @@ alias grdev="g pull --rebase origin dev && yarn"
 alias ywn="yarn workspace native"
 alias yws="yarn workspace shared"
 alias yww="yarn workspace web"
-alias yw="yarn web"
+alias yw="yww dev:spa"
 alias yns="ywn start"
 
 ### Git ###
@@ -87,6 +90,11 @@ alias gsp="git stash pop"
 alias gpf="git push --force-with-lease"
 alias gpl="git pull"
 alias gr="git rebase"
+alias gundo="g reset --soft HEAD~1"
+alias gplr="gpl --rebase origin"
+alias gra="g rebase --abort"
+alias grs="g rebase --skip"
+alias grc="g rebase --continue"
 
 ### Docker ###
 alias dps="docker ps"

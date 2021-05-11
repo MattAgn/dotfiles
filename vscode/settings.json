@@ -1,10 +1,8 @@
 {
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": -1,
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontSize": 15,
-  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
@@ -107,5 +105,25 @@
   },
   "eslint.format.enable": true,
   "stories.username": "Singapore_butterfly",
-  "workbench.editor.labelFormat": "short"
+  "workbench.editor.labelFormat": "short",
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "eslint.lintTask.enable": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "elixirLS.suggestSpecs": false,
+  "elixirLS.signatureAfterComplete": false,
+  "elixirLS.fetchDeps": false,
+  "emmet.includeLanguages": {
+    "html-eex": "html",
+    "elixir": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.delimiterInsideMessage": "-",
+  "turboConsoleLog.quote": "'",
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "editor.defaultFormatter": "JakeBecker.elixir-ls",
+  "editor.formatOnSave": true
 }
