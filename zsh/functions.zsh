@@ -54,7 +54,7 @@ grsoft() {
 # Commit all in a Work in progress commit
 gwp() {
   git add .
-  git ci -m "WIP: Work in progress"
+  git ci -m "feat(WIP): Work in progress"
 }
 
 

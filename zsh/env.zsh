@@ -1,6 +1,7 @@
 # for kubernetes
 export TILLER_NAMESPACE=tiller
 
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 export GCP_PROJECT="inshallah-staging"
@@ -25,3 +26,4 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 
 # PUMP
 export USE_API_PROXY=true
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
