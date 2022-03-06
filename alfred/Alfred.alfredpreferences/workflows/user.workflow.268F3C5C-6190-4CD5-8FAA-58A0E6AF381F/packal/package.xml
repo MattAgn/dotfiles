@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>iOS Simulator</name>
-  <version>1.0.1</version>
-  <bundle>com.ricardosampayo.iossimulator</bundle>
-  <updated>1569614672</updated>
-  <file>ios_simulator.alfredworkflow</file>
-</workflow>

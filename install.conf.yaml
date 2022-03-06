@@ -17,8 +17,6 @@
     # Git
     ~/.gitconfig: git/gitconfig
     ~/.czrc: git/czrc
-    # Alfred
-    ~/alfred/Alfred.alfredpreferences: alfred/Alfred.alfredpreferences
     # Vim
     ~/.vim: vim
 - shell:
