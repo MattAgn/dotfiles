@@ -124,6 +124,7 @@
   "turboConsoleLog.delimiterInsideMessage": "-",
   "turboConsoleLog.quote": "'",
   "turboConsoleLog.includeFileNameAndLineNum": false,
-  "editor.defaultFormatter": "JakeBecker.elixir-ls",
-  "editor.formatOnSave": true
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "diffEditor.maxComputationTime": 0
 }

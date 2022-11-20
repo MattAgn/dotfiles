@@ -5,7 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.dotfiles/zsh/antigen.zsh
+source ~/dotfiles/zsh/env.zsh
+source ~/dotfiles/zsh/antigen.zsh
+
+export FZF_BASE="/usr/local/bin/fzf"
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -14,27 +17,30 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle rupa/z
 antigen bundle fzf
+antigen bundle fzf-emulator
 antigen bundle wfxr/forgit
 antigen bundle wfxr/emoji-cli
+antigen bundle zsh-autocomplete
 antigen bundle tarruda/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+
 
 antigen theme romkatv/powerlevel10k
 
 antigen apply
 
-source ~/.dotfiles/zsh/env.zsh
-source ~/.dotfiles/zsh/functions.zsh
-source ~/.dotfiles/zsh/aliases.zsh
+
+source ~/dotfiles/zsh/functions.zsh
+source ~/dotfiles/zsh/aliases.zsh
 
 
 ##### NVM ######
-source ~/.bashrc
+# source ~/.bashrc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ### NFM 
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 
 ##### GOOGLE CLOUD & KUBERNETES CONFIG ######
@@ -61,3 +67,11 @@ function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
     [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+eval "$(fnm env --use-on-cd)"
+
+# RBENV
+type rbenv > /dev/null
+if [ "$?" = "0" ]; then
+    eval "$(rbenv init -)"
+fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

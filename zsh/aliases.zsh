@@ -1,5 +1,5 @@
 
-alias dotfiles="cd ~/.dotfiles"
+alias dotfiles="cd ~/dotfiles"
 
 ### VSCode ###
 alias co="code ."
@@ -23,20 +23,6 @@ alias y="yarn"
 alias rnand="react-native run-android"
 alias rnios="react-native run-ios"
 alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_2 </dev/null &>/dev/null &"
-
-### WorkoutApp ###
-alias woap="cd ~/projects/woap/WorkoutApp"
-alias woaps="cd ~/projects/woap/WorkoutServer"
-
-
-### Snake flutter ###
-alias snake="cd ~/projects/snake_game"
-
-### USI ###
-alias usiapp="cd /Users/matthieu/projects/usi/usi-protocols"
-
-### CodeName ###
-alias cname="cd /Users/matthieu/projects/elixirLearning/code_name"
 
 ### Inshallah ###
 alias ins="cd ~/projects/bam/inshallah/InshAllah-App"
@@ -64,13 +50,16 @@ alias ums="cd ~/projects/bam/inshallah/InshAllah-Server/packages/utils-microserv
 alias igrpc="cd ~/projects/bam/inshallah/InshAllah-Server/packages/interface-grpc"
 
 ### PUMP ###
-alias pump="cd /Users/matthieu/projects/bam/pmu/pump"
-alias flight="cd /Users/matthieu/projects/bam/pmu/flight"
-alias pbiz="cd /Users/matthieu/projects/bam/pmu/pmu-business-logic"
-alias pco="cd /Users/matthieu/projects/bam/pmu/pmu-pco-fetch"
-alias pnative="cd /Users/matthieu/projects/bam/pmu/pump/packages/native"
-alias pshared="cd /Users/matthieu/projects/bam/pmu/pump/packages/shared"
-alias pweb="cd /Users/matthieu/projects/bam/pmu/pump/packages/web"
+alias pump="cd ~/projects/bam/pmu/pump"
+alias ppr="cd ~/projects/bam/pmu/portail-partenaire-front"
+alias flight="cd ~/projects/bam/pmu/flight"
+alias pbiz="cd ~/projects/bam/pmu/pmu-business-logic"
+alias pco="cd ~/projects/bam/pmu/pmu-pco-fetch"
+alias pnative="cd ~/projects/bam/pmu/pump/packages/native"
+alias pios="cd ~/projects/bam/pmu/pump/packages/native/ios"
+alias pandroid="cd ~/projects/bam/pmu/pump/packages/native/android"
+alias pshared="cd ~/projects/bam/pmu/pump/packages/shared"
+alias pweb="cd ~/projects/bam/pmu/pump/packages/web"
 alias start_vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias kiil_vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias grdev="g pull --rebase origin dev && yarn"
@@ -78,7 +67,12 @@ alias ywn="yarn workspace native"
 alias yws="yarn workspace shared"
 alias yww="yarn workspace web"
 alias yw="yww dev:spa"
-alias yns="ywn start"
+alias yns="ywn start:metro"
+alias ynse="ywn start:metro:e2e"
+alias podi="pios && pod install && .."
+
+### DALMA ### 
+alias dal="cd ~/projects/bam/app-dalma-native"
 
 ### Git ###
 alias gcb="git co -b"
@@ -96,6 +90,7 @@ alias gplr="gpl --rebase origin"
 alias gra="g rebase --abort"
 alias grs="g rebase --skip"
 alias grc="g rebase --continue"
+alias gprune="git fetch --prune;git branch | grep -v dev | grep -v master | xargs git branch -D"
 
 ### Docker ###
 alias dps="docker ps"
@@ -103,3 +98,6 @@ alias dcup="docker-compose up"
 
 ### Elixir ###
 alias dcmix="docker-compose run server mix"
+
+alias intel="arch -x86_64"
+

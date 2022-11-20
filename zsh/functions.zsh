@@ -6,14 +6,6 @@ alias glNoGraph='git log --color=always --format="%C(auto)%h%d %s %C(black)%C(bo
 _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
 _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | diff-so-fancy'"
 
-# Make PR
-gpr() {
-  cd $(git rev-parse --show-toplevel)
-  TITLE=${1}
-  MESSAGE=$(echo $TITLE'\n' | cat - ./PULL_REQUEST_TEMPLATE.md)
-  hub pull-request -m "${MESSAGE}" --browse
-}
-
 # gcob - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
 gcob() {
   local branches branch
@@ -184,4 +176,10 @@ fcd() {
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
+}
+# Usage : jestprof <pattern de nom test>
+function jestprof () {
+  node --prof node_modules/.bin/jest --runInBand "$@"
+  node --prof-process --preprocess -j isolate*.log | speedscope -
+  rm isolate*.log
 }
