@@ -80,6 +80,7 @@ alias rntl="cd ~/projects/opensource/react-native-testing-library"
 ### BAM ###
 alias rnweb="cd ~/projects/bam/RnWebPlayground"
 alias ware="cd ~/projects/bam/react-native-warehouse"
+alias enabler="cd ~/projects/bam/react-native-enabler"
 
 
 ### Git ###
