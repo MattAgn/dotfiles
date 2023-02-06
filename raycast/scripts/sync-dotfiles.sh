@@ -2,7 +2,7 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title update dotfiles
+# @raycast.title sync dotfiles
 # @raycast.mode compact
 
 # Optional parameters:
