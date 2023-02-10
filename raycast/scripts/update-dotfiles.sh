@@ -7,12 +7,13 @@
 
 # Optional parameters:
 # @raycast.icon 🤖
+# @raycast.argument1 { "type": "text", "placeholder": "commit message", "percentEncoded": true }
 
 # Documentation:
 # @raycast.author Matthieu
 
 cd ~/dotfiles
 git add .
-git commit -m "update dotfiles"
+git commit -m $1
 git push
 
