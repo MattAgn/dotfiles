@@ -7,7 +7,7 @@
 
 # Optional parameters:
 # @raycast.icon 🤖
-# @raycast.argument1 { "type": "text", "placeholder": "commit message", "percentEncoded": true }
+# @raycast.argument1 { "type": "text", "placeholder": "commit message" }
 
 # Documentation:
 # @raycast.author Matthieu
