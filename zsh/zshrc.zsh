@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZSH_DISABLE_COMPFIX="true"
+
+
 source ~/dotfiles/zsh/env.zsh
 source ~/dotfiles/zsh/antigen.zsh
 
