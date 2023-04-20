@@ -1,10 +1,11 @@
 # for kubernetes
 export TILLER_NAMESPACE=tiller
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk11-zulu/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-export GCP_PROJECT="inshallah-staging"
 export FZF_DEFAULT_OPTS="--layout=reverse"
 export FORGIT_FZF_DEFAULT_OPTS="
   $FZF_DEFAULT_OPTS
@@ -29,6 +30,7 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"export LDFLAGS="-L/opt/homebrew/op
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 export FZF_BASE="/opt/homebrew/bin/fzf"
+export DYLD_LIBRARY_PATH="/opt/homebrew/opt/gmp/lib:$DYLD_LIBRARY_PATH"
 
 # PUMP
 export USE_API_PROXY=true

@@ -8,8 +8,6 @@ fi
 source ~/dotfiles/zsh/env.zsh
 source ~/dotfiles/zsh/antigen.zsh
 
-export FZF_BASE="/usr/local/bin/fzf"
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -44,12 +42,6 @@ eval "$(fnm env)"
 
 
 ##### GOOGLE CLOUD & KUBERNETES CONFIG ######
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/matthieu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matthieu/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/matthieu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matthieu/google-cloud-sdk/completion.zsh.inc'; fi
-
 # kube aliases
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
@@ -75,3 +67,13 @@ if [ "$?" = "0" ]; then
     eval "$(rbenv init -)"
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+
+source /Users/matthieu/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/matthieu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/matthieu/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/matthieu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/matthieu/google-cloud-sdk/completion.zsh.inc'; fi
