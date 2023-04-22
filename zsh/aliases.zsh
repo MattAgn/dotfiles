@@ -27,6 +27,12 @@ alias rnweb="cd ~/projects/bam/RnWebPlayground"
 alias ware="cd ~/projects/bam/react-native-warehouse"
 alias enabler="cd ~/projects/bam/react-native-enabler"
 
+### MONIWAN ###
+alias mona="cd ~/projects/bam/moniwan/moniwan-app"
+alias monios="cd ~/projects/bam/moniwan/moniwan-app/ios"
+alias monand="cd ~/projects/bam/moniwan/moniwan-app/android"
+alias monb="cd ~/projects/bam/moniwan/moniwan-backend"
+
 ### Git ###
 alias gcb="git co -b"
 alias gz="g cz"
