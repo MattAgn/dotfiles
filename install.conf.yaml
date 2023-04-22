@@ -20,4 +20,5 @@
     # Vim
     ~/.vim: vim
 - shell:
+    - brew bundle install
     - [git submodule update --init --recursive, Installing submodules]
