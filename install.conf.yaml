@@ -21,4 +21,4 @@
     ~/.vim: vim
 - shell:
     - brew bundle install
-    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init dotbot, Installing Dotbot submodule]
