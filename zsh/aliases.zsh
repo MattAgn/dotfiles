@@ -19,61 +19,6 @@ alias ybw="yarn build:watch"
 alias ylf="yarn lint:fix"
 alias y="yarn"
 
-### Mobile ###
-alias rnand="react-native run-android"
-alias rnios="react-native run-ios"
-alias emuand="/Users/matthieu/Library/Android/sdk/emulator/emulator @Pixel_2 </dev/null &>/dev/null &"
-
-### Inshallah ###
-alias ins="cd ~/projects/bam/archived/inshallah/InshAllah-App"
-alias inss="cd ~/projects/bam/archived/inshallah/InshAllah-Server"
-alias insw="cd ~/projects/bam/archived/inshallah/InshAllah-Web"
-alias insi="cd ~/projects/bam/archived/inshallah/Inshallah-Infra"
-alias insc="cd ~/projects/bam/archived/inshallah/inshallah-client"
-alias dc="docker-compose -f docker-compose.dev.yml up --force-recreate"
-alias mi="make install"
-alias mb="make build"
-alias mspmt="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-payment"
-alias msuser="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-user"
-alias msmigration="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-migration"
-alias msphoto="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-photo"
-alias mssettings="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-settings"
-alias msprofile="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-public-profile"
-alias msaccount="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-account"
-alias mssupport="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-support"
-alias mssession="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-session"
-alias msevent="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-eventstore"
-alias msinter="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-interaction"
-alias apigtw="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/api-gateway"
-alias msalgo="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/microservice-algorithm"
-alias ums="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/utils-microservice"
-alias igrpc="cd ~/projects/bam/archived/inshallah/InshAllah-Server/packages/interface-grpc"
-
-### PUMP ###
-alias pump="cd ~/projects/bam/archived/pmu/pump"
-alias ppr="cd ~/projects/bam/archived/pmu/portail-partenaire-front"
-alias flight="cd ~/projects/bam/archived/pmu/flight"
-alias pbiz="cd ~/projects/bam/archived/pmu/pmu-business-logic"
-alias pco="cd ~/projects/bam/archived/pmu/pmu-pco-fetch"
-alias pnative="cd ~/projects/bam/archived/pmu/pump/packages/native"
-alias pios="cd ~/projects/bam/archived/pmu/pump/packages/native/ios"
-alias pandroid="cd ~/projects/bam/archived/pmu/pump/packages/native/android"
-alias pshared="cd ~/projects/bam/archived/pmu/pump/packages/shared"
-alias pweb="cd ~/projects/bam/archived/pmu/pump/packages/web"
-alias start_vpn="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
-alias kiil_vpn="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
-alias grdev="g pull --rebase origin dev && yarn"
-alias ywn="yarn workspace native"
-alias yws="yarn workspace shared"
-alias yww="yarn workspace web"
-alias yw="yww dev:spa"
-alias yns="ywn start:metro"
-alias ynse="ywn start:metro:e2e"
-alias podi="pios && pod install && .."
-
-### DALMA ### 
-alias dal="cd ~/projects/bam/archived/app-dalma-native"
-
 ### Opensource ###
 alias rntl="cd ~/projects/opensource/react-native-testing-library"
 
@@ -81,7 +26,6 @@ alias rntl="cd ~/projects/opensource/react-native-testing-library"
 alias rnweb="cd ~/projects/bam/RnWebPlayground"
 alias ware="cd ~/projects/bam/react-native-warehouse"
 alias enabler="cd ~/projects/bam/react-native-enabler"
-
 
 ### Git ###
 alias gcb="git co -b"
@@ -105,8 +49,24 @@ alias gprune="git fetch --prune;git branch | grep -v dev | grep -v master | xarg
 alias dps="docker ps"
 alias dcup="docker-compose up"
 
-### Elixir ###
-alias dcmix="docker-compose run server mix"
-
 alias intel="arch -x86_64"
 
+
+
+######## OLD PROJECTS ##########
+
+### Inshallah ###
+alias ins="cd ~/projects/bam/archived/inshallah/InshAllah-App"
+alias inss="cd ~/projects/bam/archived/inshallah/InshAllah-Server"
+
+### PUMP ###
+alias pump="cd ~/projects/bam/archived/pmu/pump"
+alias ppr="cd ~/projects/bam/archived/pmu/portail-partenaire-front"
+alias pnative="cd ~/projects/bam/archived/pmu/pump/packages/native"
+alias pios="cd ~/projects/bam/archived/pmu/pump/packages/native/ios"
+alias pandroid="cd ~/projects/bam/archived/pmu/pump/packages/native/android"
+alias pshared="cd ~/projects/bam/archived/pmu/pump/packages/shared"
+alias pweb="cd ~/projects/bam/archived/pmu/pump/packages/web"
+
+### DALMA ### 
+alias dal="cd ~/projects/bam/archived/app-dalma-native"
