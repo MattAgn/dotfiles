@@ -127,5 +127,6 @@
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "diffEditor.maxComputationTime": 0,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "editor.accessibilitySupport": "off"
 }
