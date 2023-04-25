@@ -50,6 +50,8 @@ alias gra="g rebase --abort"
 alias grs="g rebase --skip"
 alias grc="g rebase --continue"
 alias gprune="git fetch --prune;git branch | grep -v dev | grep -v master | xargs git branch -D"
+alias master="g co master && g pull && yarn"
+alias main="g co main && g pull && yarn"
 
 ### Docker ###
 alias dps="docker ps"
