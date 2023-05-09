@@ -6,6 +6,9 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 export FZF_DEFAULT_OPTS="--layout=reverse"
 export FORGIT_FZF_DEFAULT_OPTS="
   $FZF_DEFAULT_OPTS
