@@ -22,6 +22,10 @@ alias y="yarn"
 ### Opensource ###
 alias rntl="cd ~/projects/opensource/react-native-testing-library"
 
+### CookingCoach ###
+alias cf="cd ~/projects/CookingSecondBrain/frontend"
+alias cb="cd ~/projects/CookingSecondBrain/backend"
+
 ### BAM ###
 alias rnweb="cd ~/projects/bam/RnWebPlayground"
 alias ware="cd ~/projects/bam/react-native-warehouse"
@@ -45,7 +49,7 @@ alias gpf="git push --force-with-lease"
 alias gpl="git pull"
 alias gr="git rebase"
 alias gundo="g reset --soft HEAD~1"
-alias gplr="gpl --rebase origin"
+e
 alias gra="g rebase --abort"
 alias grs="g rebase --skip"
 alias grc="g rebase --continue"
