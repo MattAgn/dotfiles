@@ -49,7 +49,7 @@ alias gpf="git push --force-with-lease"
 alias gpl="git pull"
 alias gr="git rebase"
 alias gundo="g reset --soft HEAD~1"
-e
+alias gplr="gpl --autostash --rebase origin" 
 alias gra="g rebase --abort"
 alias grs="g rebase --skip"
 alias grc="g rebase --continue"
