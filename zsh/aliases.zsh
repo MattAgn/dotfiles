@@ -23,8 +23,8 @@ alias y="yarn"
 alias rntl="cd ~/projects/opensource/react-native-testing-library"
 
 ### CookingCoach ###
-alias cf="cd ~/projects/CookingSecondBrain/frontend"
-alias cb="cd ~/projects/CookingSecondBrain/backend"
+alias cf="cd ~/projects/CookingSecondBrain/"
+alias cs="cd ~/projects/CookingSecondBrain/supabase"
 
 ### BAM ###
 alias rnweb="cd ~/projects/bam/RnWebPlayground"
