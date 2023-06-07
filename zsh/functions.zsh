@@ -31,7 +31,7 @@ gri() {
   commit=$( glNoGraph |
     fzf --no-sort --reverse --tiebreak=index --no-multi \
         --ansi --preview="$_viewGitLogLine" ) &&
-  git rebase -i $(echo "$commit" | sed "s/ .*//")
+  git rebase --autostash -i $(echo "$commit" | sed "s/ .*//")
 }
 
 # grsoft - soft reset

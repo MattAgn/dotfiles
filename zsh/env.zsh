@@ -5,7 +5,6 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk11-zulu/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 

@@ -89,7 +89,7 @@
   },
   "workbench.colorCustomizations": {},
   "oneDarkPro.vivid": true,
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.colorTheme": "One Dark Pro Mix",
   "oneDarkPro.italic": false,
   "oneDarkPro.bold": false,
   "workbench.editor.scrollToSwitchTabs": true,
@@ -129,5 +129,6 @@
   "diffEditor.maxComputationTime": 0,
   "extensions.ignoreRecommendations": true,
   "editor.accessibilitySupport": "off",
-  "window.zoomLevel": 1
+  "git.openRepositoryInParentFolders": "always",
+  "emmet.showExpandedAbbreviation": "never"
 }
