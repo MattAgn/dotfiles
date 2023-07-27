@@ -37,6 +37,9 @@ alias monios="cd ~/projects/bam/moniwan/moniwan-app/ios"
 alias monand="cd ~/projects/bam/moniwan/moniwan-app/android"
 alias monb="cd ~/projects/bam/moniwan/moniwan-backend"
 
+### TF1 ### 
+alias nova="/Users/matthieu/projects/bam/tf1/nova"
+
 ### Git ###
 alias gcb="git co -b"
 alias gz="g cz"
